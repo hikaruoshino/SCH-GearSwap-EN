@@ -70,3 +70,7 @@ This repository has no license. Because it is built on greeds's code, please do 
 ## Changelog
 
 - **English edition (2026-10-23):** First release of the English edition, based on the current Japanese `SCH.lua` / `SCH_gear.lua` / `weather_obi.lua`. English names throughout, the three `user-globals.lua` functions called only when they exist, and the auto-translate announcements built from fixed phrase IDs.
+
+## Feedback
+
+A one-line "it works" is welcome too. With a GitHub account you can post from [Issues](../../issues/new/choose).
