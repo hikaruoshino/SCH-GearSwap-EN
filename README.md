@@ -69,6 +69,7 @@ This repository has no license. Because it is built on greeds's code, please do 
 
 ## Changelog
 
+- **2026-10-26:** The Celerity / Alacrity feet are now worn when the cast starts (precast) as well as during the cast (midcast). Those feet have to be on when you use the spell, and casting time is set when the cast starts.
 - **English edition (2026-10-23):** First release of the English edition, based on the current Japanese `SCH.lua` / `SCH_gear.lua` / `weather_obi.lua`. English names throughout, the three `user-globals.lua` functions called only when they exist, and the auto-translate announcements built from fixed phrase IDs.
 
 ## Feedback

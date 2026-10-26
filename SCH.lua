@@ -74,6 +74,18 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             and (fc_gear_value.BlackSurplus + sub_job_fast_cast() >= 80)
         equip(surplus and sets.precast.FC.BlackSurplus or sets.precast.FC.Black)
     end
+
+    -- ★ The Celerity / Alacrity feet (they cut casting time and recast for spells that match the weather)
+    --   must be on "when you use the spell", not when you use the ability. Casting time is set when the cast starts,
+    --   so wear them here as well as in job_post_midcast. They go on after the FC set, so they replace its feet
+    if spell.action_type == 'Magic' and spell.name ~= 'Impact' then
+        for _, buff in ipairs({'Celerity', 'Alacrity'}) do
+            if buffactive[buff] and sets.buff[buff]
+            and not (spell.name == 'Embrava' and buff == 'Celerity') then   -- same exception as in job_post_midcast
+                equip(sets.buff[buff])
+            end
+        end
+    end
 end
 
 
