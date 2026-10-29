@@ -247,7 +247,7 @@ function init_gear_sets()
         legs="Nyame Flanchard", 
         feet="Nyame Sollerets", 
         neck={ name="Argute Stole +2", augments={'Path: A',}},
-        waist="Skrymir Cord +1",
+        waist="Skrymir Cord",
         left_ear="Malignance Earring",
         right_ear="Regal Earring",
         left_ring="Freke Ring",
@@ -255,15 +255,8 @@ function init_gear_sets()
         back=gear.JobMantle.MGC ,
     }
     
-	    sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.Magic,{
-    ammo="Oshasha's Treatise",
-    waist="Furin Obi",
-    left_ear="Malignance Earring",
-    right_ear="Regal Earring",
-    left_ring="Freke Ring",
-    right_ring="Cornelia's Ring",
-   }) 
-	
+-- The Aeolian Edge set is defined AFTER init_weapon_skill() below: the shared definition would otherwise overwrite it with sets.precast.WS.Magic
+
 	    sets.precast.WS["Myrkr"] = set_combine(sets.precast.WS.Magic,{
     ammo="Staunch Tathlum +1",
     head="Peda. Mortar. +4",
@@ -283,6 +276,16 @@ function init_gear_sets()
     
     -- Load the shared weapon skill definitions
     if init_weapon_skill then init_weapon_skill() end   -- defined in greeds's user-globals.lua; skipped if you do not use that file
+
+    -- Aeolian Edge (must be defined here; the shared init_weapon_skill() overwrites it with sets.precast.WS.Magic if defined above)
+    sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.Magic,{
+    ammo="Oshasha's Treatise",
+    waist="Furin Obi",
+    left_ear="Malignance Earring",
+    right_ear="Regal Earring",
+    left_ring="Freke Ring",
+    right_ring="Cornelia's Ring",
+   }) 
 
     
     -- Enfeebling magic

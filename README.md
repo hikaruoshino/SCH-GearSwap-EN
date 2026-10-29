@@ -69,6 +69,7 @@ This repository has no license. Because it is built on greeds's code, please do 
 
 ## Changelog
 
+- **2026-10-30:** The Aeolian Edge set is now defined after the `init_weapon_skill()` call. Depending on your `user-globals.lua`, that shared function can overwrite the set with `sets.precast.WS.Magic`; in my setup Furin Obi and Oshasha's Treatise were never worn because of this. Also changed the waist in `sets.precast.WS.Magic` from Skrymir Cord +1 to Skrymir Cord (the one I actually own); change it back if you have the +1.
 - **2026-10-26:** The Celerity / Alacrity feet are now worn when the cast starts (precast) as well as during the cast (midcast). Those feet have to be on when you use the spell, and casting time is set when the cast starts.
 - **English edition (2026-10-23):** First release of the English edition, based on the current Japanese `SCH.lua` / `SCH_gear.lua` / `weather_obi.lua`. English names throughout, the three `user-globals.lua` functions called only when they exist, and the auto-translate announcements built from fixed phrase IDs.
 
